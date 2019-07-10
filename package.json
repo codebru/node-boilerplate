@@ -4,6 +4,8 @@
   "description": "Boilerplate for node backend with user auth",
   "main": "index.js",
   "scripts": {
+    "start": "node index",
+    "dev": "nodemon index",
     "test": "jest && eslint --ignore-path .gitignore .",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
@@ -26,6 +28,10 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.2",
     "eslint-plugin-security": "^1.4.0",
-    "jest": "^24.8.0"
+    "jest": "^24.8.0",
+    "nodemon": "^1.19.1"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
