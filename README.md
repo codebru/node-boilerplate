@@ -35,19 +35,3 @@ Boilerplate for node backend with user auth
 Same place as the existing file
 ### End to End tests
 E2ETests folder 
-
-├── E2ETests
-├── index.js
-├── index.unit.test.js
-├── package.json
-├── node_modules
-└── README.md
-
-
-```
-
-## Testing file location
-### Unit tests
-Same place as the existing file
-### End to End tests
-E2ETests folder 
