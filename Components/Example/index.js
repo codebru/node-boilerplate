@@ -1,8 +1,10 @@
 /* INCLUDES ******************************* */
-const example = require('express').Router();
+const express = require('express');
 /* **************************************** */
 
 /* ROUTES ********************************* */
+const example = express.Router();
+
 example.get('/', (req, res) => {
   res.status(200);
   res.send('SUCCESS');

@@ -1,10 +1,12 @@
 /* INCLUDES ****************************** */
-const router = require('express').Router();
+const express = require('express');
 const passport = require('passport');
 const { isAlreadyAuthenticated } = require('./../../Utils/Passport/auth');
 /* **************************************** */
 
 /* ROUTES ********************************* */
+const router = express.Router();
+
 router.post('/login', isAlreadyAuthenticated, (req, res, next) => {
   passport.authenticate('local', {
     successRedirect: '/example',

@@ -4,11 +4,12 @@ const session = require('express-session');
 const passport = require('passport');
 const flash = require('flash');
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
+const passportConfig = require('./Utils/Passport/config');
 /* **************************************** */
 
 /* INCLUDE CONFIGS ************************ */
-require('dotenv').config();
-const passportConfig = require('./Utils/Passport/config');
+dotenv.config();
 /* **************************************** */
 
 /* INCLUDE ROUTES ************************ */
