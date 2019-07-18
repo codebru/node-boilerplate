@@ -5,7 +5,7 @@ const passport = require('passport');
 const flash = require('flash');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
-const passportConfig = require('./Utils/Passport/config');
+const passportConfig = require('./Middleware/Passport/config');
 /* **************************************** */
 
 /* INCLUDE CONFIGS ************************ */

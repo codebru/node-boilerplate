@@ -1,7 +1,7 @@
 /* INCLUDES ****************************** */
 const express = require('express');
 const passport = require('passport');
-const { isAlreadyAuthenticated } = require('./../../Utils/Passport/auth');
+const { isAlreadyAuthenticated } = require('../../Middleware/Passport/auth');
 /* **************************************** */
 
 /* ROUTES ********************************* */

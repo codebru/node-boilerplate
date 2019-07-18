@@ -1,5 +1,6 @@
 /* AUTH FUNCTIONS ************************* */
 function isAuthenticated(req, res, next) {
+// TODO change names of these funtions as they clash with the req.blah name
   if (req.isAuthenticated()) {
     next();
     return;
