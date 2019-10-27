@@ -17,6 +17,7 @@ const RATELIMITINTERVAL = 1 * 60 * 1000; // 1 Min
 
 /* INCLUDE CONFIGS ************************ */
 dotenv.config();
+const port = process.env.PORT || 3000
 /* **************************************** */
 
 /* INCLUDE ROUTES ************************ */
@@ -80,7 +81,7 @@ app.use('/user', user);
 /* **************************************** */
 
 /* SERVER START *************************** */
-app.listen(3000, () => {
-  console.log('App listening on port 3000');
+app.listen(port, () => {
+  console.log(`App listening on port ${port}`);
 });
 /* **************************************** */
