@@ -7,21 +7,21 @@ Boilerplate for node backend with user auth
 ├── Components
 │   ├── Example
 │   │   ├── index.js
-│   │   └── index.unit.test.js
+│   │   └── index.test.js
 │   └── Example2
 │       ├── index.js
-│       ├── index.unit.test.js
-│       ├── model.js
-│       ├── model.unit.test.js
+│       ├── index.test.js
+│       ├── data.js
+│       ├── data.test.js
 │       ├── controler.js
-│       └── controler.unit.test.js
+│       └── controler.test.js
 ├── Utils
 │   ├── Example
 │   │   ├── index.js
-│   │   └── index.unit.test.js
+│   │   └── index.test.js
 │   └── Example2
 │       ├── index.js
-│       └── index.unit.test.js
+│       └── index.test.js
 ├── E2ETests
 │   └── user.js
 ├── index.js
