@@ -34,11 +34,11 @@ async function read(email) {
   }
 }
 
-async function update(email, field, value) {
+async function update(passwordHash, email, bio, imageLink) {
   const query = {
     name: 'updateUser',
-    text: 'UPDATE users SET "$1" = "$2" WHERE email = "$3";',
-    values: [field, value, email],
+    text: 'UPDATE users SET passwordHash = $1, email = $2, bio = $3, imageLink = $4 WHERE email = $2;',
+    values: [passwordHash, email, bio, imageLink],
   };
   try {
     await db.none(query);
@@ -48,9 +48,9 @@ async function update(email, field, value) {
   }
 }
 
-async function remove() {
+async function remove(email) {
   const query = {
-    name: 'updateUser',
+    name: 'deleteUser',
     text: 'DELETE FROM users WHERE email = $1;',
     values: [email],
   };
