@@ -14,6 +14,7 @@ async function login() {
   };
   const body = JSON.stringify(data);
   const sentiments = await fetch('http://local.pleasepickatheme.com:3000/user/login', { method: 'POST', headers, body });
+  // eslint-disable-next-line no-console
   console.log(sentiments.status);
 }
 /* **************************************** */

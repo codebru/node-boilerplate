@@ -1,7 +1,6 @@
 /* INCLUDES ******************************* */
 import pgPromise from 'pg-promise';
 import dotenv from 'dotenv';
-import { IConnectionParameters } from 'pg-promise/typescript/pg-subset';
 
 const pg = pgPromise();
 dotenv.config();
@@ -12,9 +11,9 @@ const {
   DB_USER, DB_PASS, DB_HOST, DB_PORT, DB_NAME,
 } = process.env;
 
-const connectionInfo: IConnectionParameters = {
+const connectionInfo = {
   host: DB_HOST,
-  port: parseInt(DB_PORT, 10),
+  port: parseInt(<string>DB_PORT, 10),
   database: DB_NAME,
   user: DB_USER,
   password: DB_PASS,

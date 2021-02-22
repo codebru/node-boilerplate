@@ -9,8 +9,11 @@
     "test": "tsc && jest ./dist",
     "test:watch": "nodemon --watch 'src' -e js,ts --exec 'tsc && jest ./dist'",
     "test:break": "tsc && node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand ./src",
-    "lint": "eslint --ignore-path .gitignore ",
-    "lint:watch": "nodemon --watch 'src' -e js,ts --exec 'eslint --ignore-path .gitignore ./src'"
+    "lint": "eslint --ignore-path .gitignore src/**/*.ts",
+    "lint:watch": "nodemon --watch 'src' -e js,ts --exec 'eslint --ignore-path .gitignore src/**/*.ts'",
+    "lint:fix": "eslint --fix --ignore-path .gitignore src/**/*.ts",
+    "lint:watchfix": "nodemon --watch 'src' -e js,ts --exec 'npm run lint:fix'",
+    "flow": "nodemon --watch 'src' -e js,ts --exec 'npm run lint:fix && npm run test'"
   },
   "repository": {
     "type": "git",
@@ -24,8 +27,15 @@
   "homepage": "https://github.com/codebru/node-boilerplate#readme",
   "devDependencies": {
     "@types/express": "^4.17.11",
+    "@types/express-rate-limit": "^5.1.1",
+    "@types/express-session": "^1.17.3",
     "@types/jest": "^26.0.20",
     "@types/node": "^14.14.31",
+    "@types/node-fetch": "^2.5.8",
+    "@types/passport": "^1.0.6",
+    "@types/passport-local": "^1.0.33",
+    "@types/pg-promise": "^5.4.3",
+    "@types/supertest": "^2.0.10",
     "@typescript-eslint/eslint-plugin": "^4.15.1",
     "@typescript-eslint/parser": "^4.15.1",
     "eslint": "^7.20.0",
@@ -35,6 +45,7 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-typescript": "^0.14.0",
     "jest": "^26.6.3",
     "nodemon": "^2.0.7",
     "supertest": "^6.1.3",

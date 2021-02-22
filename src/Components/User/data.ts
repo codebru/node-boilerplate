@@ -5,7 +5,7 @@ import db from '../../Utils/Database/connection';
 /* **************************************** */
 
 /* FUNCTIONS ****************************** */
-async function create(passwordHash, email, bio, imageLink) {
+async function create(passwordHash: string, email: string, bio: string, imageLink: string) {
   const query = {
     name: 'addUser',
     text: 'INSERT INTO users(passwordhash, email, bio, imagelink, admin) VALUES ($1, $2, $3, $4, FALSE);',
@@ -19,7 +19,7 @@ async function create(passwordHash, email, bio, imageLink) {
   }
 }
 
-async function read(email) {
+async function read(email: string) {
   const query = {
     name: 'readUser',
     text: 'SELECT * FROM users WHERE email = $1',
@@ -32,7 +32,7 @@ async function read(email) {
   }
 }
 
-async function update(passwordHash, email, bio, imageLink) {
+async function update(passwordHash: string, email: string, bio: string, imageLink: string) {
   const query = {
     name: 'updateUser',
     text: 'UPDATE users SET passwordHash = $1, email = $2, bio = $3, imageLink = $4 WHERE email = $2;',
@@ -46,7 +46,7 @@ async function update(passwordHash, email, bio, imageLink) {
   }
 }
 
-async function remove(email) {
+async function remove(email: string) {
   const query = {
     name: 'deleteUser',
     text: 'DELETE FROM users WHERE email = $1;',

@@ -1,5 +1,6 @@
 /* INCLUDES ******************************* */
-import LocalStrategy from 'passport-local';
+import { PassportStatic } from 'passport';
+import { Strategy } from 'passport-local';
 /* **************************************** */
 
 /* VARIABLES ****************************** */
@@ -10,10 +11,17 @@ const user = {
 };
 /* **************************************** */
 
+// tslint:disable-next-line:no-empty-interface
+interface User {}
+
 /* VARIABLES ****************************** */
-function setup(passport) {
-  passport.use(new LocalStrategy(
-    { usernameField: 'username', passwordField: 'password' }, (username, password, done) => {
+function setup(passport: PassportStatic) {
+  passport.use(new Strategy(
+    {
+      usernameField: 'username',
+      passwordField: 'password',
+    },
+    (username: string, password: string, done: Function) => {
       if (username === user.username
        && user.passwordHash === password) {
         done(null, true);
@@ -23,11 +31,11 @@ function setup(passport) {
     },
   ));
 
-  passport.serializeUser((usr, done) => {
+  passport.serializeUser((usr: User, done: Function) => {
     done(null, usr);
   });
 
-  passport.deserializeUser((usr, done) => {
+  passport.deserializeUser((usr: User, done: Function) => {
     done(null, usr);
   });
 }
