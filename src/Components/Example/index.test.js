@@ -1,5 +1,5 @@
 const request = require('supertest')
-const app = require('../../index.js');
+const app = require('../../index');
 
 describe('Post Endpoints', () => {
   it('should create a new post', async (done) => {
