@@ -6,9 +6,9 @@
   "scripts": {
     "start": "tsc && node dist",
     "dev": "nodemon index",
-    "test": "jest && eslint --ignore-path .gitignore .",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
+    "test": "jest  ./src && eslint --ignore-path .gitignore",
+    "test:watch": "jest --watch ./src",
+    "test:coverage": "jest --coverage ./src",
     "lint": "eslint --ignore-path .gitignore ."
   },
   "repository": {
