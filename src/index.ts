@@ -1,13 +1,18 @@
 /* INCLUDES ****************************** */
-const express = require('express');
-const session = require('express-session');
-const rateLimit = require('express-rate-limit');
-const helmet = require('helmet');
-const passport = require('passport');
-const flash = require('flash');
-const bodyParser = require('body-parser');
-const dotenv = require('dotenv');
-const passportConfig = require('./Middleware/Passport/config');
+import express from 'express';
+import session from 'express-session';
+import rateLimit from 'express-rate-limit';
+import helmet from 'helmet';
+import passport from 'passport';
+import flash from 'flash';
+import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
+import passportConfig from './Middleware/Passport/config';
+/* **************************************** */
+/* INCLUDE ROUTES ************************ */
+import example from './Components/Example';
+import user from './Components/User';
+
 /* **************************************** */
 
 /* CONSTANTS ****************************** */
@@ -20,10 +25,6 @@ dotenv.config();
 const port = process.env.PORT || 3000
 /* **************************************** */
 
-/* INCLUDE ROUTES ************************ */
-const example = require('./Components/Example');
-const user = require('./Components/User');
-/* **************************************** */
 
 /* SETUP APP ****************************** */
 const app = express();
@@ -86,4 +87,4 @@ app.listen(port, () => {
 });
 /* **************************************** */
 
-module.exports = app;
+export default app;

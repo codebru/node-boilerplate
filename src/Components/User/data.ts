@@ -1,9 +1,7 @@
 /* INCLUDES ******************************* */
-const dbConnect = require('../../Utils/Database/connection');
+import db from '../../Utils/Database/connection';
 /* **************************************** */
 
-/* DATABASE CONNECTION ******************** */
-const db = dbConnect.connect();
 /* **************************************** */
 
 /* FUNCTIONS ****************************** */
@@ -65,7 +63,7 @@ async function remove(email) {
 /* **************************************** */
 
 /* EXPORTS ******************************** */
-module.exports = {
+export default {
   create, read, update, remove,
 };
 /* **************************************** */

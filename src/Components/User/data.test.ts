@@ -1,4 +1,4 @@
-const data = require('./data');
+import data from './data';
 
 beforeEach(async () => {
   await data.remove('test@test.com');

@@ -1,5 +1,5 @@
 /* INCLUDES ******************************* */
-const express = require('express');
+import express from 'express';
 /* **************************************** */
 
 /* ROUTES ********************************* */
@@ -12,5 +12,5 @@ example.get('/', (req, res) => {
 /* **************************************** */
 
 /* EXPORTS ******************************** */
-module.exports = example;
+export default example;
 /* **************************************** */

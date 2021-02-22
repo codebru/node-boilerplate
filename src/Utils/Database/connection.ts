@@ -1,6 +1,7 @@
 /* INCLUDES ******************************* */
-const pgPromise = require('pg-promise');
-const dotenv = require('dotenv');
+import pgPromise from 'pg-promise';
+import dotenv from 'dotenv';
+import { IConnectionParameters } from 'pg-promise/typescript/pg-subset';
 
 const pg = pgPromise();
 dotenv.config();
@@ -11,9 +12,9 @@ const {
   DB_USER, DB_PASS, DB_HOST, DB_PORT, DB_NAME,
 } = process.env;
 
-const connectionInfo = {
+const connectionInfo: IConnectionParameters = {
   host: DB_HOST,
-  port: DB_PORT,
+  port: parseInt(DB_PORT, 10),
   database: DB_NAME,
   user: DB_USER,
   password: DB_PASS,
@@ -27,5 +28,5 @@ function connect() {
 /* **************************************** */
 
 /* EXPORTS ******************************** */
-module.exports = { connect };
+export default connect();
 /* **************************************** */

@@ -1,5 +1,5 @@
 /* INCLUDES ******************************* */
-const LocalStrategy = require('passport-local').Strategy;
+import LocalStrategy from 'passport-local';
 /* **************************************** */
 
 /* VARIABLES ****************************** */
@@ -34,5 +34,5 @@ function setup(passport) {
 /* **************************************** */
 
 /* EXPORTS ******************************** */
-module.exports = { setup };
+export default { setup };
 /* **************************************** */

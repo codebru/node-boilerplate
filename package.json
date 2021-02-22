@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "tsc && node dist",
-    "dev": "nodemon index",
-    "test": "tsc && jest ./src",
+    "dev": "nodemon --watch 'src/**/*.ts'  --exec 'tsc && node index'",
+    "test": "tsc && jest ./dist",
+    "test:watch": "nodemon --watch 'src' -e js,ts --exec 'tsc && jest ./dist'",
     "test:break": "tsc && node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand ./src",
-    "lint": "eslint --ignore-path .gitignore ."
+    "lint": "eslint --ignore-path .gitignore ",
+    "lint:watch": "nodemon --watch 'src' -e js,ts --exec 'eslint --ignore-path .gitignore ./src'"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,8 @@
   },
   "homepage": "https://github.com/codebru/node-boilerplate#readme",
   "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/jest": "^26.0.20",
     "@types/node": "^14.14.31",
     "@typescript-eslint/eslint-plugin": "^4.15.1",
     "@typescript-eslint/parser": "^4.15.1",

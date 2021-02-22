@@ -18,5 +18,5 @@ function isAlreadyAuthenticated(req, res, next) {
 /* **************************************** */
 
 /* EXPORTS ******************************** */
-module.exports = { isAuthenticated, isAlreadyAuthenticated };
+export { isAuthenticated, isAlreadyAuthenticated };
 /* **************************************** */

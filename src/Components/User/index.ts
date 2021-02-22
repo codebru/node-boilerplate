@@ -1,7 +1,7 @@
 /* INCLUDES ****************************** */
-const express = require('express');
-const passport = require('passport');
-const { isAlreadyAuthenticated } = require('../../Middleware/Passport/auth');
+import express from 'express';
+import passport from 'passport';
+import { isAlreadyAuthenticated } from '../../Middleware/Passport/auth';
 /* **************************************** */
 
 /* ROUTES ********************************* */
@@ -16,4 +16,4 @@ router.post('/login', isAlreadyAuthenticated, (req, res, next) => {
 });
 /* **************************************** */
 
-module.exports = router;
+export default router;
