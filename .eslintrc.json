@@ -5,24 +5,22 @@
         "es6": true,
         "jest/globals": true
     },
+    "parser": "@typescript-eslint/parser",
     "extends": [
-        "airbnb",
-	"plugin:security/recommended"
+        "airbnb-base",
+        "plugin:security/recommended"
     ],
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
     },
     "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
         "ecmaVersion": 2018
     },
     "plugins": [
-        "react",
         "security",
-        "jest"
+        "jest",
+        "@typescript-eslint"
     ],
     "rules": {
     }
